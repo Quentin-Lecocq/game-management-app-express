@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des jeux</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a href="/">home</a>
+    <a href="/categories">categories</a>
+    <h1>Liste des jeux</h1>
+    <ul>
+      <% games.forEach(game => { %>
+        <li>
+          <strong><%= game.title %></strong> - <%= game.category_name %>
+          (<%= game.platform %>)
+          - Stock: <%= game.stock_quantity %>
+        </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>

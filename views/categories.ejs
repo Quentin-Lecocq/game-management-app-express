@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des categories</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a href="/">home</a>
+    <a href="/games">games</a>
+    <br />
+    <h1>Liste des categories</h1>
+    <ul>
+      <% categories.forEach(category => { %>
+        <li>
+          <strong><%= category.name %></strong>
+        </li>
+      <% }) %>
+    </ul>
+  </body>
+</html>
