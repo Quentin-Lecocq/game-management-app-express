@@ -38,10 +38,20 @@ async function createGet(req, res) {
   })
 }
 
-
+async function deleteGame(req, res) {
+  try {
+    const { id } = req.params;
+    await mutations.deleteGame(id);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete game' });
+  } finally {
+    res.redirect("/games");
+  }
+}
 
 module.exports = {
   getGames,
   createGet,
-  createPost
+  createPost,
+  deleteGame
 }

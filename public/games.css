@@ -1,9 +1,18 @@
 .game-item {
+  display: flex;
+  justify-content: space-between;
   background: lightgrey;
   margin-bottom: 10px;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
+
+  .delete-game-button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    text-decoration: underline;
+  }
 }
 
 .game-item:hover {
