@@ -1,6 +1,13 @@
 const db = require("../db/queries");
 const mutations = require("../db/mutations");
 
+const platformData = [
+  { id: '1', name: 'Xbox' },
+  { id: '2', name: 'PS5' },
+  { id: '3', name: 'PS4' },
+  { id: '4', name: 'PC' }
+]
+
 
 async function getGames(req, res) {
   const games = await db.getAllGames();
@@ -26,7 +33,8 @@ async function createGet(req, res) {
   const categories = await db.getAllCategories();
   res.render("createGame", {
     title: "Create new game",
-    categories
+    categories,
+    platforms: platformData
   })
 }
 
