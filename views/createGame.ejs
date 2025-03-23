@@ -1,4 +1,3 @@
-<!-- views/createUser.ejs -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -14,22 +13,34 @@
         <input type="text" name="title" id="title" />
       </div>
       <div>
-        <label for="platform">Platform</label>
-        <select name="platform" id="platform">
+        <label for="category">Category</label>
+        <select name="category" id="category">
           <% categories.forEach(category => { %>
             <option value="<%= category.id %>"><%= category.name %></option>
             <% }) %>
-          </select>
-        </div>
-        <div>
-          <label for="stock_quantity">Quantity</label>
-          <input type="number" name="stock_quantity" id="stock_quantity" />
-        </div>
-        <button type="submit">
-          Add
-        </button>
+        </select>
+      </div>
+      <div>
+        <label for="stock_quantity">Quantity</label>
+        <input type="number" name="stock_quantity" id="stock_quantity" />
+      </div>
+      <div>
+        <label for="platform">Platform</label>
+        <select name="platform" id="platform">
+          <option value="Xbox">Xbox</option>
+          <option value="PS5">PS5</option>
+          <option value="PS4">PS4</option>
+          <option value="PC">PC</option>
+        </select>
+      </div>
+      <button type="submit">
+        Add
+      </button>
       </form>
-      <a href="/">Back to home</a>
+      <div class="link-container">
+        <a href="/">back to home</a>
+        <a href="/games">back to games</a>
+      </div>
   </body>
 </html>
 
