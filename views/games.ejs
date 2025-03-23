@@ -2,7 +2,8 @@
 <html>
   <head>
     <title>Liste des jeux</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/games.css" />
+    <link rel="stylesheet" href="/common.css" />
   </head>
   <body>
     <a href="/">home</a>
@@ -10,12 +11,13 @@
     <h1>Liste des jeux</h1>
     <ul>
       <% games.forEach(game => { %>
-        <li>
+        <li class="game-item">
           <strong><%= game.title %></strong> - <%= game.category_name %>
           (<%= game.platform %>)
           - Stock: <%= game.stock_quantity %>
         </li>
       <% }) %>
     </ul>
+    <a href="/games/create">Create a game</a>
   </body>
 </html>

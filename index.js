@@ -9,6 +9,8 @@ const categoryRouter = require("./routes/categoryRouter");
 // Middleware pour parser le JSON
 app.use(express.json());
 
+app.use(express.urlencoded({ extended: true }));
+
 // Configure ejs engine templates
 app.set('view engine', 'ejs');
 
