@@ -16,20 +16,20 @@ async function getGames(req, res) {
   });
 }
 
-async function createPost(req, res) {
+async function createGamePost(req, res) {
   try {
     const { title, platform, stock_quantity } = req.body;
     await mutations.insertGame(title, platform, stock_quantity);
     res.status(201)
   } catch (error) {
     console.error("Error creating game:", error);
-    res.status(500).json({ error: "Failed to create game" });
+    res.status(500).json({ error: "failed to create game" });
   } finally {
     res.redirect("/games");
   }
 }
 
-async function createGet(req, res) {
+async function createGameGet(req, res) {
   const categories = await db.getAllCategories();
   res.render("createGame", {
     title: "Create new game",
@@ -43,7 +43,7 @@ async function deleteGame(req, res) {
     const { id } = req.params;
     await mutations.deleteGame(id);
   } catch (error) {
-    res.status(500).json({ error: 'Failed to delete game' });
+    res.status(500).json({ error: 'failed to delete game' });
   } finally {
     res.redirect("/games");
   }
@@ -51,7 +51,7 @@ async function deleteGame(req, res) {
 
 module.exports = {
   getGames,
-  createGet,
-  createPost,
+  createGameGet,
+  createGamePost,
   deleteGame
 }

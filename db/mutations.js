@@ -8,6 +8,14 @@ async function insertGame(title, platform, stock_quantity) {
   return rows[0];
 }
 
+async function insertCategory(name) {
+  const { rows } = await pool.query(
+    "INSERT INTO categories (name) VALUES ($1) RETURNING *",
+    [name]
+  );
+  return rows[0];
+}
+
 async function deleteGame(id) {
   const { rows } = await pool.query(
     "DELETE FROM games WHERE id = $1 RETURNING *",
@@ -18,5 +26,6 @@ async function deleteGame(id) {
 
 module.exports = {
   insertGame,
+  insertCategory,
   deleteGame
 }

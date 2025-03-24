@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/common.css" />
+    <link rel="stylesheet" href="/categories.css" />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form
+      class="create-category-form"
+      method="POST"
+      action="/categories/create"
+    >
+      <div>
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" />
+      </div>
+      <button type="submit">Add</button>
+    </form>
+    <div class="link-container">
+      <a href="/">back to home</a>
+      <a href="/categories">back to category</a>
+    </div>
+  </body>
+</html>
