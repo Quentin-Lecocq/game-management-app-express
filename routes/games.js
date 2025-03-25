@@ -5,7 +5,7 @@ const {
   createGameGet,
   createGamePost,
   deleteGame
-} = require("../controllers/gameController");
+} = require("../controllers/games");
 
 const router = Router();
 
