@@ -5,10 +5,10 @@ const {
   createCategoryPost
 } = require("../controllers/categoryController");
 
-const categoryRouter = Router();
+const router = Router();
 
-categoryRouter.get("/", getCategories);
-categoryRouter.get("/create", createCategoryGet);
-categoryRouter.post("/create", createCategoryPost);
+router.get("/", getCategories);
+router.get("/create", createCategoryGet);
+router.post("/create", createCategoryPost);
 
-module.exports = categoryRouter;
+module.exports = router;

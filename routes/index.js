@@ -1,11 +1,11 @@
 const { Router } = require("express");
 
-const indexRouter = Router();
+const router = Router();
 
-indexRouter.get("/", (req, res) => {
+router.get("/", (req, res) => {
   res.render('index', {
     message: 'Hello from ejs'
   })
 })
 
-module.exports = indexRouter;
+module.exports = router;
