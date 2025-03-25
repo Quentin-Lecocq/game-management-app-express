@@ -3,7 +3,7 @@ const {
   getCategories,
   createCategoryGet,
   createCategoryPost
-} = require("../controllers/categoryController");
+} = require("../controllers/categories");
 
 const router = Router();
 
