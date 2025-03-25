@@ -2,9 +2,9 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
-const gameRouter = require("./routes/gameRouter");
-const indexRouter = require("./routes/indexRouter");
-const categoryRouter = require("./routes/categoryRouter");
+const gameRouter = require("./routes/games");
+const indexRouter = require("./routes");
+const categoryRouter = require("./routes/categories");
 
 // Middleware pour parser le JSON
 app.use(express.json());
