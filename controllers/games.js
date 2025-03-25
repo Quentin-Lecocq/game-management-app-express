@@ -1,3 +1,4 @@
+const { validationResult } = require("express-validator");
 const db = require("../db/queries");
 const mutations = require("../db/mutations");
 
@@ -17,6 +18,20 @@ async function getGames(req, res) {
 }
 
 async function createGamePost(req, res) {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    const categories = await db.getAllCategories();
+    return res.status(400).render('createGame', {
+      title: "Create new game",
+      categories,
+      platforms: platformData,
+      errors: errors.array(),
+      oldInput: req.body
+    })
+  }
+
+
   try {
     const { title, platform, stock_quantity } = req.body;
     await mutations.insertGame(title, platform, stock_quantity);

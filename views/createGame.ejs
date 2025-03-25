@@ -10,7 +10,7 @@
     <form class="create-game-form" method="POST" action="/games/create">
       <div>
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" required />
+        <input type="text" name="title" id="title" />
       </div>
       <div>
         <label for="category">Category</label>
@@ -36,6 +36,13 @@
         Add
       </button>
       </form>
+      <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+        <ul>
+          <% errors.forEach(error => { %>
+            <li class="error"><%= error.msg %></li>
+          <% }) %>
+        </ul>
+      <% } %>
       <div class="link-container">
         <a href="/">back to home</a>
         <a href="/games">back to games</a>

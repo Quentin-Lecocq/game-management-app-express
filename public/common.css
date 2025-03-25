@@ -27,3 +27,8 @@ a {
 input {
   width: 100%;
 }
+
+.error {
+  color: rgb(215, 59, 53);
+  font-weight: 600;
+}
